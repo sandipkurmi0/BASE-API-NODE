@@ -1,0 +1,57 @@
+{
+  "name": "node-babel-template",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "babel-node ./src/bin/www.js",
+    "dev:start": "nodemon --exec babel-node ./src/bin/www.js",
+    "clean": "rm -rf dist",
+    "w:clean": "rmdir /s dist",
+    "u:build": "npm run clean && babel ./src --out-dir dist --copy-files",
+    "w:build": "npm run w:clean && babel ./src --out-dir dist --copy-files",
+    "w:prod": "node ./dist/bin/www.js",
+    "start": "node ./dist/bin/www.js",
+    "lint": "eslint \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "core-js": "^3.8.1",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "^0.31.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "mongoose-unique-validator": "^3.0.0",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15",
+    "plivo": "^4.27.0",
+    "regenerator-runtime": "^0.13.7",
+    "slug": "^5.1.0",
+    "stripe": "^8.195.0",
+    "twilio": "^3.72.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-babel-module": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": "15.X"
+  }
+}
