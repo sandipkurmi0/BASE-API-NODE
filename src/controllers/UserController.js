@@ -22,7 +22,6 @@ class UserController extends Controller {
   }
 
   async login(req, res) {
-    console.log(req.body)
     const response = await this.service.login(req.body);
     return res.status(response.statusCode).send(response);
   }

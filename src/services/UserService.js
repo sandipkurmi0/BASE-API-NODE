@@ -27,21 +27,24 @@ class UserService extends Service {
           };
         } else {
           return {
-            error: 'You entered the wrong email or password',
+            error: true,
+            message: 'You entered the wrong email or password',
             statusCode: 401,
             data: null
           };
         }
       } else {
         return {
-          error: 'You entered the wrong email or password',
+          error: true,
+          message: 'You entered the wrong email or password',
           statusCode: 401,
           data: null
         };
       }
     } catch (error) {
       return {
-        error: error.message,
+        error: true,
+        message: error.message,
         statusCode: 400,
         data: null,
       };
@@ -66,21 +69,24 @@ class UserService extends Service {
           };
         } else {
           return {
-            error: 'You entered wrong currant password',
+            error: true,
+            message: 'You entered wrong currant password',
             statusCode: 400,
             data: null
           };
         }
       } else {
         return {
-          error: 'You entered wrong currant password',
+          error: true,
+          message: 'You entered wrong currant password',
           statusCode: 400,
           data: null
         };
       }
     } catch (error) {
       return {
-        error: error.message,
+        error: true,
+        message: error.message,
         statusCode: 400,
         data: null,
       };
